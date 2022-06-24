@@ -15,19 +15,22 @@ const MovieProvider = ({ children }) => {
 
   const [titleToRemove, setTitleToRemove] = useState('');
   const [titleToAdd, setTitleToAdd] = useState('');
+  const [titleWatched, setTitleWatched] = useState('');
 
   const values = {
     movies,
     searchParams,
     titleToRemove,
-    titleToAdd
+    titleToAdd,
+    titleWatched
   }
 
   const setters = {
     setMovies,
     setSearchParams,
     setTitleToRemove,
-    setTitleToAdd
+    setTitleToAdd,
+    setTitleWatched
   }
 
   return (

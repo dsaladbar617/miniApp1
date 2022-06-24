@@ -1,19 +1,24 @@
 version: '3'
 
 services:
-  ui:
-    build: client
+  client:
+    build: client/app/
+    depends_on:
+      - 'database'
+    ports:
+      - '3000:3000'
+
+  server:
+    build: server/
     depends_on:
       - 'database'
     ports:
       - '8080:8080'
 
-  api:
-    build: server
-    depends_on:
-      - 'database'
-    ports:
-      - '8080:8080'
+    restart: on-failure
+    command: bash -c "npm run knex && npm run start"
 
   database:
     image: postgres:latest
+    ports:
+      - '5432:5432'

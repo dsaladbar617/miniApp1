@@ -15,9 +15,9 @@ const SearchPage = () => {
   }, [url])
 
   return (
-    <>
+    <div className="display">
       {values.movies.map((movie, index) => (<MovieCard key={index} movie={movie} />))}
-    </>
+    </div>
   );
 }
 

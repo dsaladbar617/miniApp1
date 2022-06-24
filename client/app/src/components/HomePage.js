@@ -14,9 +14,11 @@ const HomePage = () => {
   }, [])
 
   return (
-    <>
-      {movies.map((movie, index) => (<MovieCard key={index} movie={movie} />))}
-    </>
+    <div className="display">
+      <div className='listed'>
+        {movies.map((movie, index) => (<MovieCard key={index} movie={movie} />))}
+      </div>
+    </div>
   );
 }
 

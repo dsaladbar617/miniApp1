@@ -1,11 +1,13 @@
 import express from "express";
 const router = express.Router();
 
-import { fullList, searchResults, removeMovie, addMovie } from "../controllers/listController.js";
+import { fullList, searchResults, removeMovie, addMovie, changeWatched } from "../controllers/listController.js";
 
 router.route('/all').get(fullList);
 router.route('/all').delete(removeMovie);
 router.route('/all').post(addMovie);
+router.route('/all').patch(changeWatched);
+
 
 
 router.route('/search/:results').get(searchResults);

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { MovieContext } from "../MovieContent.js";
+import '../styles/components.css';
 
 
 const Header = () => {
